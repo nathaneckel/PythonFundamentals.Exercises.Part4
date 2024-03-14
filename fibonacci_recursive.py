@@ -9,3 +9,5 @@ def fibonacci(f):
     #Boundaries
 for num in range(1, 31):
     print(fibonacci(num))
+
+    #self notes:  didn't realize this was an if/else problem from looking at it.
