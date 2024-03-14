@@ -1,4 +1,6 @@
-#WHILE RANDOM !== GUESS, KEEP PLAYING (SEE BELOW)
+#   WHILE SUCCESS = FALSE keep playing the game!
+#ELSE  print("My number is also " + str(random) + ". " + str(guess) + " \n YOU WIN!")
+
 #this function asks user for a number 1-10
 from random import randrange
 
@@ -16,8 +18,9 @@ def random_number_generator():
 #Function: Compare Number for the Guess; Give Feedback
 
 
-#   WHILE LOOP!!!
-#   While guess !== keep playing the game!
+#   WHILE SUCCESS = FALSE keep playing the game!
+#ELSE  print("My number is also " + str(random) + ". " + str(guess) + " \n YOU WIN!")
+
 
 def number_compare(random, guess):
     if(random == guess):
