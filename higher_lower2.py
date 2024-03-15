@@ -1,47 +1,31 @@
-#   WHILE SUCCESS = FALSE keep playing the game!
-#ELSE  print("My number is also " + str(random) + ". " + str(guess) + " \n YOU WIN!")
-
-#this function asks user for a number 1-10
 from random import randrange
 
-#Helper Functions
-#Initiate the game
-def number_guessing_game():
-    guess = int(input("Please enter a number (0 to 10)\n"))
-    return(guess)
+#Prompting user to enter a number:
+def yank_input():
+    x = input("Pick a Number: \n")
+    return int(x)
 
-#Function: Generate and Return a Number
-def random_number_generator():
-    return randrange(10)
+#Define random_num and randrange parameters
+def rand_num():
+    rand = randrange(1, 10)
+    return rand
 
-#NEED A HINT / RETRY OPTION - COULD I REARRANGE THE ELIFS FOR THIS?
-#Function: Compare Number for the Guess; Give Feedback
+#Define high or low and boolean True loop
 
-
-#   WHILE SUCCESS = FALSE keep playing the game!
-#ELSE  print("My number is also " + str(random) + ". " + str(guess) + " \n YOU WIN!")
-
-
-def number_compare(random, guess):
-    if(random == guess):
-        print("My number is also " + str(random) + ". " + str(guess) + " \n YOU WIN!")
-    elif(random < guess):
-        if (random < guess):
-            print(str(guess) + " was too high!\n Try again")
-    elif (random > guess):
-            print(str(guess) + " is too low!\n Try again!")
-
-def number_guessing_game2():
-     guess = int(input("Please enter a number (0 to 10)\n"))
-     return(guess)
-
-#Main Function - This Calls the Helpers In Order
-def main():
-    random = random_number_generator()
-    guess = number_guessing_game()
-    number_compare(random, guess)
-    guess = number_guessing_game2()
+def high_or_low(random):
+    while True: #this is the key boolean statement that makes the loop work - don't forget colon:
+        playerOne = yank_input()
+        print('Your number: ' +str(playerOne))
+        if playerOne == 0:
+            print("You guessed 0 -\n Try Again from 1 to 10!")
+        if playerOne > random:
+            print("You guessed too high!\n Try Again!")
+        elif playerOne < random:
+            print("You guessed too low\n Try Again!")
+        elif playerOne == random:
+            print("You guessed the number! \nYou Win!")
+            break
 
 
-#Call Main - This Runs the Program
-main()
+#Call the high_or_low function to begin the game
+high_or_low(rand_num())
